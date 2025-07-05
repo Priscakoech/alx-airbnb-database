@@ -77,5 +77,5 @@ LEFT JOIN
     Payment ON Booking.booking_id = Payment.booking_id
 WHERE
     Booking.start_date >= CURRENT_DATE - INTERVAL '30 days';
-    
+    AND Booking.status = 'confirmed'
 
