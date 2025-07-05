@@ -25,7 +25,9 @@ Review.comment,
 Review.created_at
 FROM
 Property
-LEFT JOIN Review ON Property.property_id = Review.property_id;  
+LEFT JOIN 
+Review ON Property.property_id = Review.property_id;  
+ORDER BY Property.property_name
 
 -- full outer join to retrieve all users and their bookings, including users with no bookings and bookings with no associated user
 SELECT
