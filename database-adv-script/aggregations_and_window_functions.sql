@@ -1,7 +1,9 @@
 SELECT
 user.user_id,
 user.first_name,
+
 COUNT(booking.booking_id) AS total_bookings
+RANK() OVER (ORDER BY COUNT(booking.booking_id) DESC) AS booking_rank
 FROM
 User
 LEFT JOIN Booking ON User.user_id = Booking.user_id
