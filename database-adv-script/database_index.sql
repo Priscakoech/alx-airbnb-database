@@ -27,7 +27,8 @@ CREATE INDEX idx_review_property_id ON Review(property_id);
 CREATE INDEX idx_review_user_id ON Review(user_id);
 
 -- measure performance 
-EXPALIN ANALYZE
+
+EXPLAIN ANALYZE
 SELECT
     User.first_name,
     User.email,
@@ -39,4 +40,4 @@ Booking
 JOIN User ON Booking.user_id = User.user_id
 WHERE
     Booking.start_date >= '2023-01-01';
-    
+
