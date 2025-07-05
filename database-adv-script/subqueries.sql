@@ -32,4 +32,4 @@ WHERE
         Booking
     WHERE
         Booking.user_id = User.user_id  
-) > 5
+) > 3;
