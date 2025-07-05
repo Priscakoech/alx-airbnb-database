@@ -25,3 +25,18 @@ CREATE INDEX idx_booking_start_date ON Booking(start_date);
 -- 📌 REVIEW TABLE (optional for performance in JOINs or filtering)
 CREATE INDEX idx_review_property_id ON Review(property_id);
 CREATE INDEX idx_review_user_id ON Review(user_id);
+
+-- measure performance 
+EXPALIN ANALYZE
+SELECT
+    User.first_name,
+    User.email,
+    Booking.start_date,
+    Booking.end_date,
+
+FROM
+Booking
+JOIN User ON Booking.user_id = User.user_id
+WHERE
+    Booking.start_date >= '2023-01-01';
+    
